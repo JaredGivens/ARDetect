@@ -247,3 +247,5 @@ while True:
 #cv2.imshow("stack", stack)
 # cv2.imshow("tiny", tiny)
 cv2.waitKey(0)
+
+#working

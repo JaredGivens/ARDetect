@@ -1,10 +1,9 @@
 import cv2
 import math
 import numpy as np
-import numpy
-import math
-import cv2
 
+# given scale list of images
+# returns a simgle image containing images side by side
 
 def stackImages(scale,imgList):
     imgBlank = np.zeros_like(imgList[0])
@@ -44,21 +43,10 @@ def stackImages(scale,imgList):
         ver = hor
     return ver
 
+
+
 def xmlDetect(img,xmlPath,scale, neighbors):
-    xmlCascade = cv2.CascadeClassifier(xmlPath)
-    imgGray = cv2.cvtColor(img,cv2.COLOR_BGR2GRAY)
 
-    return xmlCascade.detectMultiScale(imgGray,scale,neighbors)
-
-
-def getTrackbars(varList):
-        for var in varList:
-            varList[0] = cv2.getTrackbarPos(varList[1],"TrackBars")
-
-def makeTrackbars(varList):
-
-    cv2.resizeWindow("TrackBars",50 * len(varList) ,240)
-    for var in varList:
-        cv2.createTrackbar(var[1],"TrackBars",var[2],var[3],)
+    return cv2.CascadeClassifier(xmlPath).detectMultiScale(cv2.cvtColor(img,cv2.COLOR_BGR2GRAY),scale,neighbors)
 
 

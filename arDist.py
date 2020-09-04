@@ -22,24 +22,6 @@ def getChessboardCorners(images, boardSize, foundCorners, showResults):
             cv2.imshow("looking", image)
             cv2.waitKey(0)
 
-
-def calcDist(img, codes, markerSize, horFov, verFov):
-    row, col, lay = img.shape
-
-    for code in codes:
-        points = code[0]
-        topDiff = points[2][0][0] - points[3][0][0]
-        botDiff = points[0][0][0] - points[1][0][0]
-        leftDiff = points[1][0][1] - points[3][0][1]
-        rightDiff = points[0][0][1] - points[2][0][1]
-        print(topDiff, botDiff, leftDiff, rightDiff)
-
-        BRHAng = points[0][0][0] / col * horFov
-        BLHAng = points[1][0][0] / col * horFov
-        TRHAng = points[2][0][0] / col * horFov
-        TLHAng = points[3][0][0] / col * horFov
-        print(BRHAng, BLHAng, TRHAng, TLHAng)
-
 cameraMatrix = np.eye(3, 3, cv2.CV_64F)
 distCoef = np.zeros((1080,720,3))
 savedFrames = []

@@ -5,7 +5,6 @@ spaceSize = 0.8 #in
 codeSize = 7.0 #in
 boardSize = (6, 9)
 
-
 def createKnownBoardPos(boardSize, spaceSize, corners):
     for i in range(boardSize[1]):
         for j in range(boardSize[0]):

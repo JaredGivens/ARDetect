@@ -14,8 +14,6 @@ def getDist(img, target1, target2, ang, offset, horFov, verFov):
 
     return directDist
 
-
-
 # returns target horazontal distance X, Z reletive to the second camera position
 def getHorDist(col, target1x, target2x, ang, offset, horFov):
 
